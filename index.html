@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фиолетовый Магазин</title>
+    
+    <style>
+        /*
+        ===================
+        ОСНОВНЫЕ СТИЛИ
+        ===================
+        */
+        :root {
+            /* Определяем фиолетовые переменные для удобства */
+            --main-purple: #5e35b1; /* Темно-фиолетовый */
+            --light-purple: #9575cd; /* Светло-фиолетовый */
+            --bg-color: #ede7f6; /* Очень светлый фиолетовый фон */
+            --button-color: #7e57c2; /* Цвет кнопки */
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: #333;
+        }
+
+        header {
+            background-color: var(--main-purple);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /*
+        ===================
+        ГАЛЕРЕЯ ТОВАРОВ
+        ===================
+        */
+        .product-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 50px 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid var(--light-purple);
+            border-radius: 12px;
+            padding: 25px;
+            width: 300px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: transform 0.4s ease-out;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px); /* Небольшой подъем карточки при наведении */
+        }
+
+        /*
+        ===================
+        ЭФФЕКТ ПОКАЧИВАНИЯ КАРТИНКИ
+        ===================
+        */
+        .product-card img {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 2px solid var(--light-purple);
+            
+            /* Применяем анимацию покачивания */
+            animation: sway 2.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes sway {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-8px) rotate(1deg); /* Движение вверх и небольшой наклон */
+            }
+        }
+        
+        /*
+        ===================
+        ЦЕНА И КНОПКА
+        ===================
+        */
+        .product-card h2 {
+            font-size: 1.6em;
+            margin-top: 0;
+            color: var(--main-purple);
+        }
+
+        .price {
+            font-size: 1.3em;
+            color: #4caf50; /* Зеленый для цены, чтобы выделить */
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            background-color: var(--button-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 25px; /* Скругленная кнопка */
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+
+        .buy-button:hover {
+            background-color: var(--main-purple);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: var(--main-purple);
+            color: white;
+            font-size: 0.9em;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Зам старосты ✨</h1>
+    </header>
+
+    <main class="product-gallery">
+
+        <div class="product-card">
+            <img src="product1.jpg" alt="Изображение товара 1">
+            <h2>Malboro</h2>
+            <p class="price">12.50 $</p>
+            <p class="description">бесплодие для мужиков</p>
+            <button class="buy-button">Купить</button>
+        </div>
+
+        <div class="product-card">
+            <img src="product2.jpg" alt="Изображение товара 2">
+            <h2>DUNHILL</h2>
+            <p class="price">25.00 $</p>
+            <p class="description">слепота с нами</p>
+            <button class="buy-button">Купить</button>
+        </div>
+
+        <div class="product-card">
+            <img src="product3.jpg" alt="Изображение товара 3">
+            <h2>Chesterfield</h2>
+            <p class="price">40.99 $</p>
+            <p class="description">писька отвалится</p>
+            <button class="buy-button">Купить</button>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Магазин. Все права защищены.AUES SIla</p>
+    </footer>
+
+</body>
+</html>
